@@ -2,313 +2,231 @@
 <html lang="en">
 <head>
     <!--
-        Nulhus website - minimalist Danish studio style
-        This single-page site was created for the Nulhus consultancy, which
-        specialises in behind‑the‑meter (BTM) solar PV and battery storage
-        advisory services. It uses a refined colour palette sampled from
-        the provided logo and clean typography to evoke a contemporary
-        Scandinavian aesthetic. Sections include a hero, services overview,
-        process, case studies, and contact details. Replace placeholder text
-        and case study examples with real information before publishing.
+        Nulhus studio website inspired by the minimalist aesthetic of architecture studios.
+        This design draws on the grey, textured backgrounds, monospace typography and
+        generous spacing seen on Engel Architects' "The Studio" page. The page presents
+        Nulhus as a boutique consultancy through a simple information block, narrative
+        paragraphs, a pared‑down list of services and an environmental policy. The
+        palette uses warm greys with Nulhus’ slate blue accent. Replace text or add
+        imagery as needed.
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nulhus – BTM Solar PV & Battery Storage Advisory</title>
-    <meta name="description" content="Nulhus provides expert behind‑the‑meter solar PV and battery storage advisory services including feasibility studies, design, tendering and optimisation.">
-    <meta property="og:title" content="Nulhus – BTM Solar PV & Battery Storage Advisory">
-    <meta property="og:description" content="Expert advisory for behind‑the‑meter solar PV and battery storage projects. Feasibility, design, tendering and optimisation.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="">
+    <title>Nulhus Studio</title>
+    <meta name="description" content="Nulhus is a studio‑style consultancy specialising in behind‑the‑meter solar PV and battery storage projects.">
+    <!-- Google Fonts: Roboto Mono for headings, Inter for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- EB Garamond for headings and Inter for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Colour palette derived from the logo */
-            --primary: #486878; /* slate blue */
-            --secondary: #f0e8d8; /* warm cream */
-            --accent: #6c8797; /* muted mid‑tone for backgrounds */
-            --light: #ffffff;
-            --dark: #1f2c34;
+            /* Colour palette inspired by Engel Architects: warm grey with a blue accent */
+            --bg: #d7d8d9; /* light grey background */
+            --fg: #1a1a1a; /* dark text */
+            --accent: #486878; /* slate blue accent from Nulhus brand */
+            --muted: #878787; /* muted grey for lines */
         }
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { box-sizing: border-box; }
         body {
             margin: 0;
+            background-color: var(--bg);
+            color: var(--fg);
             font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background-color: var(--secondary);
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            font-family: 'EB Garamond', serif;
-            font-weight: 500;
-            margin: 0 0 0.5em;
-            color: var(--primary);
-        }
-        h1 {
-            font-size: 2.5rem;
-        }
-        h2 {
-            font-size: 2rem;
-        }
-        h3 {
-            font-size: 1.4rem;
-        }
-        p {
-            margin: 0 0 1em;
-            max-width: 65ch;
-        }
-        a {
-            color: var(--primary);
-            text-decoration: none;
+            line-height: 1.7;
         }
         header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 1.5rem 2rem;
-            background-color: var(--primary);
-            color: var(--secondary);
+            align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg);
+            z-index: 10;
         }
         header img {
             height: 48px;
         }
-        header nav a {
+        nav a {
             margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--fg);
             font-weight: 500;
+            text-transform: uppercase;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
         }
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 6rem 2rem 4rem;
-            background-color: var(--primary);
-            color: var(--secondary);
+        nav a:hover { color: var(--accent); }
+        /* Intro / hero section */
+        .intro {
+            max-width: 900px;
+            margin: 4rem auto 6rem auto;
+            padding: 0 2rem;
         }
-        .hero h1 {
-            color: var(--secondary);
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+        .intro h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 400;
+            font-size: 3.5rem;
+            letter-spacing: 0.1em;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
         }
-        .hero p {
-            color: var(--secondary);
-            font-size: 1.25rem;
+        .info {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 0.5rem 1rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
             margin-bottom: 2rem;
         }
+        .info span { display: block; }
+        .info .label { color: var(--muted); text-transform: uppercase; }
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--fg);
+            margin: 2rem 0 3rem 0;
+        }
+        .intro p { max-width: 70ch; margin-bottom: 1.2rem; }
+        /* Services section */
         .section {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 4rem 2rem;
         }
-        .section:nth-child(even) {
-            background-color: var(--accent);
+        .section h2 {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 400;
+            font-size: 2rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
         }
-        .services {
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .services-list li {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: 200px 1fr;
+            gap: 0.5rem 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--muted);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
         }
-        .service {
-            padding: 1.5rem;
-            background-color: var(--light);
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        .services-list li:last-child { border-bottom: none; }
+        .services-list .label { color: var(--muted); text-transform: uppercase; }
+        .policy p,
+        .services-list .desc {
+            font-family: 'Inter', sans-serif;
         }
-        .service h3 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-        .process {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .step {
-            padding: 1.5rem;
-            background-color: var(--light);
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .case-studies {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .case-study {
-            padding: 1.5rem;
-            background-color: var(--light);
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .case-study h4 {
-            margin: 0 0 0.25rem;
-            font-family: 'EB Garamond', serif;
-            color: var(--primary);
-        }
+        /* Contact section */
         .contact-form {
             max-width: 600px;
-            margin: 2rem auto 0;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
         .contact-form label {
-            font-weight: 500;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
         }
         .contact-form input,
         .contact-form textarea {
             padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 0.25rem;
-            font-family: inherit;
+            border: 1px solid var(--muted);
+            background-color: #ffffff;
             font-size: 1rem;
         }
         .contact-form button {
+            align-self: flex-start;
             padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: #ffffff;
             border: none;
-            border-radius: 0.25rem;
-            background-color: var(--primary);
-            color: var(--secondary);
-            font-weight: 500;
-            font-size: 1rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
             cursor: pointer;
         }
-        .contact-form button:hover {
-            background-color: var(--dark);
-        }
         footer {
-            padding: 2rem;
-            background-color: var(--primary);
-            color: var(--secondary);
             text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--bg);
+            font-size: 0.85rem;
         }
-        footer a {
-            color: var(--secondary);
-            text-decoration: underline;
-        }
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            .hero p {
-                font-size: 1.5rem;
-            }
+        footer a { color: var(--fg); text-decoration: underline; }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .info { grid-template-columns: 100px 1fr; }
+            .services-list li { grid-template-columns: 150px 1fr; }
+            .intro h1 { font-size: 2.5rem; }
+            .section h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Nulhus logo" />
-        </div>
+        <img src="logo.png" alt="Nulhus logo">
         <nav>
+            <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#process">Approach</a>
-            <a href="#work">Work</a>
+            <a href="#policy">Policy</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section class="hero">
-        <h1>Behind‑the‑Meter Solar & Storage</h1>
-        <p>Independent advisory for net‑zero energy systems — from feasibility through optimisation.</p>
-        <p><a href="#contact" style="background-color: var(--secondary); color: var(--primary); padding: 0.75rem 1.25rem; border-radius: 0.25rem; font-weight: 500;">Start a project</a></p>
-    </section>
-    <section id="services" class="section">
-        <h2>Services</h2>
-        <p>We provide end‑to‑end support for BTM solar PV and battery storage projects. Our services are tailored to maximise financial returns, carbon reductions and operational resilience.</p>
-        <div class="services">
-            <div class="service">
-                <h3>Feasibility &amp; ROI</h3>
-                <p>Detailed technical and financial studies to quantify generation, storage and payback for your site.</p>
+    <main>
+        <section id="about" class="intro">
+            <h1>Nulhus</h1>
+            <div class="info">
+                <span class="label">Studio</span><span>Nulhus</span>
+                <span class="label">Founded</span><span>2024</span>
+                <span class="label">Location</span><span>Tokyo, Japan</span>
+                <span class="label">Type</span><span>Solar PV &amp; Storage Advisory</span>
+                <span class="label">Roles</span><span>Feasibility, Design &amp; Implementation</span>
             </div>
-            <div class="service">
-                <h3>System Design</h3>
-                <p>Design and specification of photovoltaic and battery systems, including metering, power electronics and controls.</p>
-            </div>
-            <div class="service">
-                <h3>Procurement</h3>
-                <p>Preparation of tender documents, supplier evaluation and contract negotiations to deliver the right solution at the right price.</p>
-            </div>
-            <div class="service">
-                <h3>Owner’s Engineer</h3>
-                <p>Independent oversight during construction, interconnection and commissioning to protect your interests.</p>
-            </div>
-            <div class="service">
-                <h3>Operations &amp; Optimisation</h3>
-                <p>Monitoring, analytics and advisory to ensure your system performs and adapts to changing tariffs and technologies.</p>
-            </div>
-        </div>
-    </section>
-    <section id="process" class="section">
-        <h2>Our Approach</h2>
-        <p>A straightforward process ensures clarity and confidence every step of the way.</p>
-        <div class="process">
-            <div class="step">
-                <h3>1. Assess</h3>
-                <p>We begin with site audits, utility data analysis and stakeholder objectives to establish a baseline.</p>
-            </div>
-            <div class="step">
-                <h3>2. Design</h3>
-                <p>Our engineers tailor system sizing, technology selection and integration to meet your goals.</p>
-            </div>
-            <div class="step">
-                <h3>3. Deliver</h3>
-                <p>Through tendering, contract oversight and commissioning, we ensure quality and compliance.</p>
-            </div>
-            <div class="step">
-                <h3>4. Optimise</h3>
-                <p>Post‑installation, we monitor performance, optimise dispatch strategies and advise on improvements.</p>
-            </div>
-        </div>
-    </section>
-    <section id="work" class="section">
-        <h2>Recent Work</h2>
-        <p>Here are a few examples of how we’ve helped clients accelerate their clean‑energy transitions.</p>
-        <div class="case-studies">
-            <div class="case-study">
-                <h4>Corporate HQ Microgrid</h4>
-                <p><strong>Capacity:</strong> 1.2 MWp solar, 1 MWh battery</p>
-                <p><strong>Impact:</strong> Reduced grid imports by 45 %, saving $250k annually and avoiding 600 t CO₂e each year.</p>
-                <p><strong>Role:</strong> Full feasibility, design, tendering and owner’s engineering.</p>
-            </div>
-            <div class="case-study">
-                <h4>Industrial Fleet Charging</h4>
-                <p><strong>Capacity:</strong> 800 kWp solar, 1.5 MWh battery</p>
-                <p><strong>Impact:</strong> Enabled on‑site EV charging and peak‑shaving, cutting operating costs by 35 %.</p>
-                <p><strong>Role:</strong> System specification, economic modelling and procurement support.</p>
-            </div>
-            <div class="case-study">
-                <h4>Mixed‑Use Development</h4>
-                <p><strong>Capacity:</strong> 500 kWp solar, 500 kWh battery</p>
-                <p><strong>Impact:</strong> Achieved net‑zero on common loads, increasing property value and tenant satisfaction.</p>
-                <p><strong>Role:</strong> Feasibility, interconnection coordination and performance optimisation.</p>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Let’s discuss how Nulhus can help you realise a resilient, low‑carbon energy future. Email us at <a href="mailto:hello@nulhus.com">hello@nulhus.com</a> or use the form below.</p>
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-            <button type="submit">Send message</button>
-        </form>
-    </section>
+            <div class="divider"></div>
+            <p>Nulhus operates like an independent studio for renewable energy projects. We combine engineering rigour with architectural thinking to craft holistic solar and battery solutions that respond to the site, the client and the community.</p>
+            <p>Our practice is built on collaboration, sustainability and innovation. We believe clean energy systems should be beautiful—economically, environmentally and socially.</p>
+        </section>
+        <section id="services" class="section">
+            <h2>What We Do</h2>
+            <ul class="services-list">
+                <li><span class="label">Feasibility &amp; ROI</span><span class="desc">Technical and financial modelling to quantify generation, storage and payback for your site.</span></li>
+                <li><span class="label">System Design</span><span class="desc">Architectural integration of PV and battery systems, including metering, controls and interconnection.</span></li>
+                <li><span class="label">Tender &amp; Procurement</span><span class="desc">Independent tender management, contractor selection and contract negotiation.</span></li>
+                <li><span class="label">Owner’s Engineer</span><span class="desc">Oversight during construction and commissioning to safeguard quality and compliance.</span></li>
+                <li><span class="label">Optimisation</span><span class="desc">Ongoing monitoring and advisory to maximise performance and adapt to new tariffs and technologies.</span></li>
+            </ul>
+        </section>
+        <section id="policy" class="section policy">
+            <h2>Environmental Policy</h2>
+            <p>We are committed to designing and implementing renewable energy systems within the limits of our planet. Every project is an opportunity to reduce emissions, preserve resources and enhance resilience for our clients and their communities.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Connect</h2>
+            <p>We’d love to discuss how Nulhus can help you realise a resilient, low‑carbon energy future. Use the form below or email <a href="mailto:hello@nulhus.com">hello@nulhus.com</a>.</p>
+            <form class="contact-form" action="https://formspree.io/f/your-form-id" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
     <footer>
-        <p>&copy; <span id="year"></span> Nulhus. All rights reserved.</p>
-        <p><a href="https://www.linkedin.com/">LinkedIn</a> | <a href="mailto:hello@nulhus.com">Email us</a></p>
+        &copy; <span id="year"></span> Nulhus. All rights reserved. <br>
+        <a href="https://www.linkedin.com/">LinkedIn</a> | <a href="mailto:hello@nulhus.com">hello@nulhus.com</a>
     </footer>
     <script>
-        // Update year dynamically
+        // update year dynamically
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
