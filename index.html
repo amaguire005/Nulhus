@@ -171,6 +171,30 @@
             .intro h1 { font-size: 2.5rem; }
             .section h2 { font-size: 1.6rem; }
         }
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-item img {
+            width: 100%;
+            border: 1px solid var(--muted);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .project-item h3 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem;
+            text-transform: uppercase;
+        }
+        .project-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -178,7 +202,8 @@
         <!-- Logo removed per updated branding; navigation simplified and includes link to projects page -->
         <nav>
             <a href="#services">Services</a>
-            <a href="projects.html">Projects</a>
+            <a href="#projects">Projects</a>
+            <a href="#policy">Policy</a>
             <a href="comments.html">Comments</a>
         </nav>
     </header>
@@ -224,6 +249,29 @@
             <p>
                 We recognise the tension between affordable clean energy, free trade and secure, well‑paid jobs. Our policy strives to align climate action and social justice so that investment in renewables uplifts communities rather than passing them by.
             </p>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <p>
+                A selection of our behind‑the‑meter solar PV and battery storage projects. Each project is shaped by its context and community — from industrial fleets to heritage buildings — and demonstrates our holistic approach.
+            </p>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="project1.png" alt="Industrial fleet charging blueprint">
+                    <h3>Industrial Fleet Charging</h3>
+                    <p>800&nbsp;kWp solar array and 1.5&nbsp;MWh battery integrated into an industrial site to support electrification of a delivery fleet. Scenario modelling considered future EV adoption and grid capacity constraints.</p>
+                </div>
+                <div class="project-item">
+                    <img src="project2.png" alt="City centre microgrid blueprint">
+                    <h3>City Centre Microgrid</h3>
+                    <p>Feasibility and design for a behind‑the‑meter microgrid serving a mixed‑use development with EV charging. Our modelling assessed grid export limits and load‑shifting opportunities.</p>
+                </div>
+                <div class="project-item">
+                    <img src="project3.png" alt="Heritage building retrofit blueprint">
+                    <h3>Heritage Building Retrofit</h3>
+                    <p>Sensitive integration of rooftop PV and battery storage into a historic building, balancing architectural conservation with energy independence. Includes O&amp;M optimisation.</p>
+                </div>
+            </div>
         </section>
         <section id="contact" class="section">
         <h2>Connect</h2>
