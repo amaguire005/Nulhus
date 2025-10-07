@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Projects page for Nulhus. Mirrors the minimal studio aesthetic of the main site. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nulhus Projects</title>
+    <meta name="description" content="Selected projects by Nulhus showcasing behind‑the‑meter solar PV and storage solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #d7d8d9;
+            --fg: #1a1a1a;
+            --accent: #486878;
+            --muted: #878787;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg);
+            z-index: 10;
+        }
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--fg);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+        }
+        nav a:hover, nav a.current { color: var(--accent); }
+        .intro {
+            max-width: 900px;
+            margin: 4rem auto 4rem auto;
+            padding: 0 2rem;
+        }
+        .intro h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 400;
+            font-size: 3.5rem;
+            letter-spacing: 0.1em;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+        }
+        .intro p {
+            max-width: 70ch;
+            margin-bottom: 1.2rem;
+        }
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem 4rem 2rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-item img {
+            width: 100%;
+            border: 1px solid var(--muted);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .project-item h3 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem;
+            text-transform: uppercase;
+        }
+        .project-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--bg);
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--fg); text-decoration: underline; }
+        @media (max-width: 768px) {
+            .intro h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Same navigation as index; highlight current page -->
+        <nav>
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="projects.html" class="current">Projects</a>
+            <a href="comments.html">Comments</a>
+            <a href="index.html#policy">Policy</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>Projects</h1>
+            <p>
+                A selection of our behind‑the‑meter solar PV and battery storage projects. Each project is shaped by its context and community — from industrial fleets to heritage buildings — and demonstrates our holistic approach.
+            </p>
+        </section>
+        <section class="section">
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="project1.png" alt="Industrial fleet charging blueprint">
+                    <h3>Industrial Fleet Charging</h3>
+                    <p>800&nbsp;kWp solar array and 1.5&nbsp;MWh battery integrated into an industrial site to support electrification of a delivery fleet. Scenario modelling considered future EV adoption and grid capacity constraints.</p>
+                </div>
+                <div class="project-item">
+                    <img src="project2.png" alt="City centre microgrid blueprint">
+                    <h3>City Centre Microgrid</h3>
+                    <p>Feasibility and design for a behind‑the‑meter microgrid serving a mixed‑use development with EV charging. Our modelling assessed grid export limits and load‑shifting opportunities.</p>
+                </div>
+                <div class="project-item">
+                    <img src="project3.png" alt="Heritage building retrofit blueprint">
+                    <h3>Heritage Building Retrofit</h3>
+                    <p>Sensitive integration of rooftop PV and battery storage into a historic building, balancing architectural conservation with energy independence. Includes O&amp;M optimisation.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; <span id="year"></span> Nulhus. All rights reserved. <br>
+        <a href="https://www.linkedin.com/">LinkedIn</a> | <a href="mailto:anthony@nulhus.com">anthony@nulhus.com</a>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
