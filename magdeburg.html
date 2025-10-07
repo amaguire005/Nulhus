@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Detail page for the Magdeburg project. Mirrors the Nulhus studio aesthetic while focusing on a single case study. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magdeburg Project – Nulhus</title>
+    <meta name="description" content="Behind‑the‑meter solar PV and battery storage project in Magdeburg designed and delivered by Nulhus.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #d7d8d9;
+            --fg: #1a1a1a;
+            --accent: #486878;
+            --muted: #878787;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg);
+            z-index: 10;
+        }
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--fg);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+        }
+        nav a:hover, nav a.current { color: var(--accent); }
+        /* Push navigation to the right */
+        nav { margin-left: auto; }
+        .container {
+            max-width: 900px;
+            margin: 4rem auto 6rem auto;
+            padding: 0 2rem;
+        }
+        h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 400;
+            font-size: 3rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .project-image {
+            width: 100%;
+            border: 1px solid var(--muted);
+            margin-bottom: 2rem;
+        }
+        .description p {
+            max-width: 70ch;
+            margin-bottom: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--bg);
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--fg); text-decoration: underline; }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation consistent with other pages; highlight Projects section -->
+        <nav>
+            <a href="index.html#services">Services</a>
+            <a href="projects.html" class="current">Projects</a>
+            <a href="index.html#policy">Policy</a>
+            <a href="comments.html">Comments</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>Magdeburg</h1>
+        <img src="magdeburg.png" alt="Magdeburg project" class="project-image">
+        <div class="description">
+            <p>
+                This industrial campus in Magdeburg, Germany, showcases a comprehensive behind‑the‑meter energy solution. Rooftop PV arrays blanket multiple buildings while a carport canopy powers a fleet of EVs. Battery storage mitigates grid constraints and smooths demand peaks.
+            </p>
+            <p>
+                Nulhus developed the feasibility studies, designed system layouts and oversaw procurement and construction. Our work balanced technical performance, operational requirements and architectural sensitivity to deliver a resilient, future‑ready energy hub.
+            </p>
+        </div>
+    </main>
+    <footer>
+        &copy; <span id="year"></span> Nulhus. All rights reserved. <br>
+        <a href="https://www.linkedin.com/">LinkedIn</a> | <a href="mailto:anthony@nulhus.com">anthony@nulhus.com</a>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

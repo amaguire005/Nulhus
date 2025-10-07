@@ -76,22 +76,37 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        .project-item img {
-            width: 100%;
-            border: 1px solid var(--muted);
-            margin-bottom: 1rem;
+        /* Card style for project thumbnails with hover overlay */
+        .project-card {
+            position: relative;
+            overflow: hidden;
             display: block;
         }
-        .project-item h3 {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.1rem;
-            margin: 0 0 0.5rem;
-            text-transform: uppercase;
+        .project-card img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--muted);
         }
-        .project-item p {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            margin: 0;
+        .project-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(26, 26, 26, 0.65);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .project-card:hover .overlay {
+            opacity: 1;
         }
         footer {
             text-align: center;
@@ -110,7 +125,7 @@
         <!-- Same navigation as index; highlight current page -->
         <nav>
             <a href="index.html#services">Services</a>
-            <a href="index.html#projects" class="current">Projects</a>
+            <a href="projects.html" class="current">Projects</a>
             <a href="index.html#policy">Policy</a>
             <a href="comments.html">Comments</a>
         </nav>
@@ -124,21 +139,18 @@
         </section>
         <section class="section">
             <div class="projects-grid">
-                <div class="project-item">
-                    <img src="project1.png" alt="Industrial fleet charging blueprint">
-                    <h3>Industrial Fleet Charging</h3>
-                    <p>800&nbsp;kWp solar array and 1.5&nbsp;MWh battery integrated into an industrial site to support electrification of a delivery fleet. Scenario modelling considered future EV adoption and grid capacity constraints.</p>
-                </div>
-                <div class="project-item">
-                    <img src="project2.png" alt="City centre microgrid blueprint">
-                    <h3>City Centre Microgrid</h3>
-                    <p>Feasibility and design for a behind‑the‑meter microgrid serving a mixed‑use development with EV charging. Our modelling assessed grid export limits and load‑shifting opportunities.</p>
-                </div>
-                <div class="project-item">
-                    <img src="project3.png" alt="Heritage building retrofit blueprint">
-                    <h3>Heritage Building Retrofit</h3>
-                    <p>Sensitive integration of rooftop PV and battery storage into a historic building, balancing architectural conservation with energy independence. Includes O&amp;M optimisation.</p>
-                </div>
+                <a href="magdeburg.html" class="project-card">
+                    <img src="magdeburg.png" alt="Magdeburg">
+                    <div class="overlay"><span>Magdeburg</span></div>
+                </a>
+                <a href="dortmund.html" class="project-card">
+                    <img src="dortmund.png" alt="Dortmund">
+                    <div class="overlay"><span>Dortmund</span></div>
+                </a>
+                <a href="tilburg.html" class="project-card">
+                    <img src="tilburg.png" alt="Tilburg">
+                    <div class="overlay"><span>Tilburg</span></div>
+                </a>
             </div>
         </section>
     </main>
