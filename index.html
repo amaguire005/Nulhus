@@ -126,6 +126,44 @@
         .services-list .desc {
             font-family: 'Inter', sans-serif;
         }
+        /* Vertical stack for project images on main page */
+        .project-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+        .project-card img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--muted);
+        }
+        .project-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(26, 26, 26, 0.65);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
         /* Contact section */
         .contact-form {
             max-width: 600px;
@@ -202,8 +240,7 @@
         <!-- Logo removed per updated branding; navigation simplified and includes link to projects page -->
         <nav>
             <a href="#services">Services</a>
-            <!-- Link to the dedicated projects page -->
-            <a href="projects.html">Projects</a>
+            <a href="#projects">Projects</a>
             <a href="#policy">Policy</a>
             <a href="comments.html">Comments</a>
         </nav>
@@ -245,13 +282,33 @@
                 </li>
             </ul>
         </section>
+        <!-- Selected projects moved back to main page -->
+        <section id="projects" class="section">
+            <h2>Selected Projects</h2>
+            <p>
+                A curated overview of our behind‑the‑meter solar PV and battery storage projects. Each scheme is shaped by its context and community — from industrial fleets to heritage buildings — and demonstrates our holistic approach.
+            </p>
+            <div class="project-stack">
+                <a href="magdeburg.html" class="project-card">
+                    <img src="magdeburg.png" alt="Magdeburg">
+                    <div class="overlay"><span>Magdeburg</span></div>
+                </a>
+                <a href="dortmund.html" class="project-card">
+                    <img src="dortmund.png" alt="Dortmund">
+                    <div class="overlay"><span>Dortmund</span></div>
+                </a>
+                <a href="tilburg.html" class="project-card">
+                    <img src="tilburg.png" alt="Tilburg">
+                    <div class="overlay"><span>Tilburg</span></div>
+                </a>
+            </div>
+        </section>
         <section id="policy" class="section policy">
             <h2>Environmental Policy</h2>
             <p>
                 We recognise the tension between affordable clean energy, free trade and secure, well‑paid jobs. Our policy strives to align climate action and social justice so that investment in renewables uplifts communities rather than passing them by.
             </p>
         </section>
-        <!-- Projects have been moved to a dedicated page (projects.html) -->
         <section id="contact" class="section">
         <h2>Connect</h2>
         <p>
